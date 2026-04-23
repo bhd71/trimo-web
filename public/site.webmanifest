@@ -1,0 +1,9 @@
+{
+  "name": "Trimo",
+  "short_name": "Trimo",
+  "description": "Free app usage tracker for Windows",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f"
+}
