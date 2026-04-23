@@ -27,7 +27,7 @@ export default async function DownloadSection() {
   const version = release?.version ?? 'latest'
 
   return (
-    <section id="download" aria-labelledby="download-heading" className="py-32 px-6 text-center">
+    <section id="download" aria-labelledby="download-heading" className="pt-32 pb-16 px-6 text-center">
       <div className="max-w-2xl mx-auto flex flex-col items-center gap-8">
         <div className="w-16 h-16 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
