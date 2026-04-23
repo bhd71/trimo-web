@@ -20,7 +20,7 @@ export default function DownloadSection() {
         >
           Download for Windows — Free
         </a>
-        <p className="text-xs text-white/25">v0.1.0 · Requires Windows 10 or later</p>
+        <p className="text-xs text-white/25">v0.1.1 · Requires Windows 10 or later</p>
       </div>
     </section>
   )

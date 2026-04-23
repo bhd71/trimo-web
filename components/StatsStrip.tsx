@@ -1,7 +1,7 @@
 const STATS = [
   { value: '< 5 MB',  label: 'App size' },
   { value: '~0% CPU', label: 'Background usage' },
-  { value: '256×256', label: 'Icon resolution' },
+  { value: '~10 MB', label: 'RAM usage' },
 ]
 
 export default function StatsStrip() {

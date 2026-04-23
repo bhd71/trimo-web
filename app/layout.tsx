@@ -67,7 +67,7 @@ const jsonLd = {
   description: 'Trimo is a free, lightweight Windows desktop app that silently tracks application usage time and displays detailed stats and trends.',
   url: 'https://trimo.app/',
   downloadUrl: 'https://trimo.app/#download',
-  softwareVersion: '0.1.0',
+  softwareVersion: '0.1.1',
   screenshot: 'https://trimo.app/og-image.png',
 }
 
