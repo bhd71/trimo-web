@@ -8,7 +8,6 @@ async function getLatestRelease(): Promise<{ version: string; url: string } | nu
   try {
     const res = await fetch('https://api.github.com/repos/bhd71/trimo/releases/latest', {
       headers: { Accept: 'application/vnd.github+json' },
-      cache: 'no-store',
     })
     if (!res.ok) return null
     const data: GitHubRelease = await res.json()
