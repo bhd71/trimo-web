@@ -1,4 +1,32 @@
-export default function DownloadSection() {
+﻿interface GitHubRelease {
+  tag_name: string
+  html_url: string
+  assets: Array<{ name: string; browser_download_url: string }>
+}
+
+async function getLatestRelease(): Promise<{ version: string; url: string } | null> {
+  try {
+    const res = await fetch('https://api.github.com/repos/bhd71/trimo/releases/latest', {
+      headers: { Accept: 'application/vnd.github+json' },
+      cache: 'no-store',
+    })
+    if (!res.ok) return null
+    const data: GitHubRelease = await res.json()
+    const exeAsset = data.assets.find(a => a.name.endsWith('.exe'))
+    return {
+      version: data.tag_name,
+      url: exeAsset?.browser_download_url ?? data.html_url,
+    }
+  } catch {
+    return null
+  }
+}
+
+export default async function DownloadSection() {
+  const release = await getLatestRelease()
+  const downloadUrl = release?.url ?? 'https://github.com/bhd71/trimo/releases/latest'
+  const version = release?.version ?? 'latest'
+
   return (
     <section id="download" aria-labelledby="download-heading" className="py-32 px-6 text-center">
       <div className="max-w-2xl mx-auto flex flex-col items-center gap-8">
@@ -12,7 +40,7 @@ export default function DownloadSection() {
           <p className="text-base text-white/50">Free download. Windows 10/11. No account required.</p>
         </div>
         <a
-          href="https://github.com/bhd71/trimo/releases/latest"
+          href={downloadUrl}
           rel="noopener noreferrer"
           target="_blank"
           className="px-8 py-3 rounded-full text-base font-semibold bg-gradient-to-r from-purple-700 to-purple-500 text-white border border-purple-400/30 hover:brightness-110 active:scale-95 transition-all duration-200 select-none"
@@ -20,7 +48,7 @@ export default function DownloadSection() {
         >
           Download for Windows — Free
         </a>
-        <p className="text-xs text-white/25">v0.1.1 · Requires Windows 10 or later</p>
+        <p className="text-xs text-white/25">{version} · Requires Windows 10 or later</p>
       </div>
     </section>
   )

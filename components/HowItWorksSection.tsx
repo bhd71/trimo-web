@@ -14,7 +14,7 @@ export default function HowItWorksSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {STEPS.map((s) => (
-            <div key={s.n} className="flex flex-col gap-4">
+            <div key={s.n} className="flex flex-col items-center text-center gap-4">
               <div className="w-10 h-10 rounded-full bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-300 font-bold text-base">
                 {s.n}
               </div>
