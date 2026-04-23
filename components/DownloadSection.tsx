@@ -48,6 +48,9 @@ export default async function DownloadSection() {
           Download for Windows — Free
         </a>
         <p className="text-xs text-white/25">{version} · Requires Windows 10 or later</p>
+        <p className="text-xs text-white/30 max-w-sm">
+          Windows may show a SmartScreen warning. Click <span className="text-white/50 font-medium">More info</span> → <span className="text-white/50 font-medium">Run anyway</span> to proceed.
+        </p>
       </div>
     </section>
   )
