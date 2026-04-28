@@ -1,8 +1,14 @@
+import Image from "next/image"
+import logo from "@/app/logo.png"
+
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-black/60 backdrop-blur-md border-b border-white/10">
       <nav aria-label="Main navigation" className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <span className="text-lg font-bold text-white tracking-tight">Trimo</span>
+        <div className="flex items-center gap-2">
+          <Image src={logo} alt="Trimo" height={32} />
+          <span className="text-lg font-bold text-white tracking-tight">Trimo</span>
+        </div>
         <div className="flex items-center gap-3">
           <a
             href="https://github.com/bhd71/trimo"
